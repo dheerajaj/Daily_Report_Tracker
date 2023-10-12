@@ -1,0 +1,67 @@
+.contact-us {
+  max-width: 400px;
+  margin: 38px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 21px;
+  background-color: #cceef1e1;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #005b8b;
+}
+
+.hbtn {
+  background: #b8e4e6;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 250px) {
+  .contact-us {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    max-width: 100%;
+  }
+
+  .hbtn {
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.Nheader {
+    background: linear-gradient(to bottom, #23262a77, #b66d00); 
+    display: flex;
+}
+
+.Nnav {
+    display: flex;
+    justify-content: end;
+    margin-left: auto;
+}
+
+.Nul {
+    display: flex;
+    gap: -1rem;
+    padding: 1rem;
+}
+
+.Nli {
+    list-style: none;
+    justify-content: right 1rem;
+}
+
+button {
+    padding: 6px;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+button:hover {
+    color: white;
+    background-color: #9092ec4b;
+    box-shadow: 0 2px 4px;
+    cursor: pointer;
+}
+
+#heading {
+    float: left;
+}
+
+@media screen and (max-width: 768px) {
+    .Nnav{
+        justify-content: center;
+    }
+
+    .Nul{
+        gap: 1rem;
+    }
+
+    .Nli{
+        margin-right: 1rem;
+    }
+
+    #heading {
+        
+        text-align: center;
+        margin: 10px auto; 
+    }
+}

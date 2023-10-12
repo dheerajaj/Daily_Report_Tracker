@@ -1,0 +1,44 @@
+/* Add this CSS to your component's stylesheet (e.g., EmployeeList.css) */
+.EmployeeList {
+    
+    font-family: Arial, sans-serif;
+    /* background-color: #f0f0f0; */
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    border-radius: 5px;
+  }
+  
+  .list {
+    color: #333;
+    text-align: center;
+  }
+  
+  .ulist {
+    
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr)); /* Create a responsive grid with 300px minimum width items */
+    grid-gap: 20px; /* Add some spacing between grid items */
+  }
+  
+  .Llist {
+    height:130px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  strong {
+    font-weight: bold;
+    color: #333;
+  }
+  
