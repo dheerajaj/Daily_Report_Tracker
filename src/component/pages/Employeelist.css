@@ -1,6 +1,6 @@
 /* Add this CSS to your component's stylesheet (e.g., EmployeeList.css) */
 .EmployeeList {
-    
+    text-transform: capitalize;
     font-family: Arial, sans-serif;
     /* background-color: #f0f0f0; */
     padding: 20px;
