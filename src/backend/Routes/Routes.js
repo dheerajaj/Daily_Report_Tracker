@@ -3,44 +3,51 @@ const bcrypt =require('bcrypt');
 const router = express.Router();
 const userModel = require('../models/UserModels');
 const ReportModels = require('../models/ReportModels');
-
-
+const multer = require('multer');
+const storage = multer.memoryStorage(); // Store the image in memory as a Buffer
+const upload = multer({ storage: storage });
 
 // Registration route
-router.post('/register', async (req, res) => {
-    try {
-      const {firstname, lastname, email, contact, password } = req.body;
-  
-      // Hash the password
-      const hashedPassword = await bcrypt.hash(password, 10);
-  
-      // Check if the username or email is already taken
-      const existingUser = await userModel.findOne({ $or: [{ email }, { contact }] });
-  
-      if (existingUser) {
-        // If username or email is already in use, return a registration error
-        return res.status(400).json({ message: 'Email or Contact is already in use' });
-      }
-  
-      // Create a new user document with the hashed password
-      const newUser = new userModel({
-        firstname, 
-        lastname, 
-        email,
-        contact,
-        password: hashedPassword,
-      });
-  
-      // Save the new user to the database
-      await newUser.save();
-  
-      res.status(200).json({ message: 'User registered successfully' });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Error registering user' });
-    }
-  });
+router.post('/register', upload.single('image'), async (req, res) => {
+  try {
+    const { firstname, lastname, email, contact, password } = req.body;
 
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Check if the username or email is already taken
+    const existingUser = await userModel.findOne({ $or: [{ email }, { contact }] });
+
+    if (existingUser) {
+      // If username or email is already in use, return a registration error
+      return res.status(400).json({ message: 'Email or Contact is already in use' });
+    }
+
+    // Get the image data from the request
+    const image = req.file ? req.file.buffer : undefined; // Check if an image was uploaded
+
+    // Create a new user document with the hashed password and image data
+    const newUser = new userModel({
+      firstname,
+      lastname,
+      email,
+      contact,
+      password: hashedPassword,
+      image: {
+        data: image, // Set the image data
+        contentType: req.file.mimetype, // Set the content type based on the uploaded file
+      },
+    });
+
+    // Save the new user to the database
+    await newUser.save();
+
+    res.status(200).json({ message: 'User registered successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error registering user' });
+  }
+});
 
 //Login Route
 

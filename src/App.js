@@ -2,7 +2,7 @@ import React from 'react'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Home from './component/pages/Home'
 import Register from './component/pages/Register'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 import DashboardPage from './component/pages/DashboardPage'
 import ReportSubmissionForm from './component/pages/ReportSubmissionForm'
 import ReportListPage from './/component/pages/ReportListPage'

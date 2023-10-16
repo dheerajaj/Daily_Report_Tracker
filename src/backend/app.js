@@ -29,6 +29,8 @@ const spec = swaggerDoc(options); // Generate the Swagger documentation based on
 // Express middleware setup
 app.use(cors()); // Enable CORS for your API
 app.use(express.json()); // Parse incoming JSON data
+app.use('/uploads', express.static('uploads'));
+
 app.use('/api/v1', userRouter); // Mount the user routes at '/api/v1'
 app.use("/app-doc", swaggerUi.serve, swaggerUi.setup(spec)); // Serve Swagger UI at '/app-doc' and use the generated Swagger documentation
 

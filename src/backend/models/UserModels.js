@@ -4,12 +4,10 @@ const userSchema = new mongoose.Schema({
   firstname: {
     type: String,
     required: true,
-   unique:false,
   },
   lastname: {
     type: String,
     required: true,
-    unique:false,
   },
   email: {
     type: String,
@@ -21,11 +19,13 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
- 
   password: {
     type: String,
     required: true,
-    unique: true,
+  },
+  image: {
+    data: Buffer, // Store image data as a binary buffer
+    contentType: String, // Store the image content type (e.g., 'image/jpeg', 'image/png')
   },
 });
 

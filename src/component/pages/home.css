@@ -1,21 +1,10 @@
-
+/* 
 .mainheading {
     display: flex; 
     justify-content: left; 
     align-items: left; 
 }
-  /* .mainheading div {
-    margin: 5px; 
-    
-  }
-  
-  .mainheading h1 {
-    font-size: 36px; 
-    font-weight: bold; 
-    color: #333; 
-    margin-left: 5px;
-  }
-   */
+ 
 
 
    @media screen and (max-width: 768px) {
@@ -63,4 +52,38 @@
     padding: 10px;
    }
    
-   
+    */
+/* Navbar.css */
+.navbar {
+  background-color: #333; /* Change this to your desired background color */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.button-container {
+  display: flex;
+}
+
+.button {
+  background-color: #007bff; /* Change this to your desired button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Change this to the hover color */
+}

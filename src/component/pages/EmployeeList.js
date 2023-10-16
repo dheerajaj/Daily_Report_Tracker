@@ -27,6 +27,7 @@ function EmployeeList() {
       <ul className='ulist'>
         {employees.map(employee => (
           <li className='Llist' key={employee.id}>
+          <img src={employee.image} alt='Profile'></img>
             <strong>First Name:</strong> {employee.firstname}<br />
             <strong>Last Name:</strong> {employee.lastname}<br />
             <strong>Email:</strong> {employee.email}<br />
